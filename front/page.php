@@ -50,6 +50,47 @@ abstract class Front_Page extends Eden_Class {
 		return $output;
 	}
 
+	protected function _amazonSearch($keyword, $page=1,$all = false) {
+		//Set amazon ecs web services
+		$response = Eden_Amazon_Ecs::i(self::AMAZON_PRIVATE_KEY, self::AMAZON_PUBLIC_KEY)
+			//set service to `AWSECommerceService`
+			->setService(self::AMAZON_SERVICE)
+			->setTimestamp()
+			//set version to `2009-03-31`
+			->setVersion(self::AMAZON_VERSION)
+			//operation is ItemSearch
+			->setOperation('ItemSearch')
+			//set keyword
+			->setKeyword($keyword)
+			->setSearchIndex()
+			//set response group to large
+			->setResponseGroup('Large')
+			//country default is us
+			->setCountry()
+			->setIdType('EAN')
+			//associate tag is the affilate tag (ID)
+			->setAssociateTag(self::AMAZON_TAG)
+			//set page
+			->setPage($page)
+			//get response which is xml format
+			->getResponse();
+		//convert response from xml to object
+		$pxml = simplexml_load_string($response);
+
+		if($all) {
+			return $pxml;
+		}
+
+		if(is_object($pxml) && isset($pxml->Items)) {
+			$return = $pxml->Items;
+		} else {
+			$return = NULL;
+		}
+
+		return $return;
+
+	}
+
 	/* Public Methods
 	-------------------------------*/
 	/**

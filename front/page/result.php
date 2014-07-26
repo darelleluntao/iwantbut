@@ -50,11 +50,20 @@ class Front_Page_Result extends Front_Page {
           var title =  document.getElementById("iWant-h2");
           title.innerHTML = result.titleNoFormatting;
 
-          var newImg = document.getElementById("iWant-img");
-          newImg.src = result.tbUrl;
+          // var newImg = document.getElementById("iWant-img");
+          // newImg.src = result.tbUrl;
 
           imgContainer.appendChild(title);
-          imgContainer.appendChild(newImg);
+
+	        for(var i = 0; i < 6;i++) {
+	          var results = searcher.results[i];
+	          var result = results;
+		          var img2 =  document.createElement("img");
+		          img2.id = "iWant-" + i;
+	          img2.src = result.tbUrl;
+
+		          imgContainer.appendChild(img2);
+	        }
 
           contentDiv.appendChild(imgContainer);
 
@@ -72,11 +81,21 @@ class Front_Page_Result extends Front_Page {
 	      var title =  document.getElementById("iLike-h2");
           title.innerHTML = result.titleNoFormatting;
 
-          var newImg = document.getElementById("iLike-img");
-          newImg.src = result.tbUrl;
+          // var newImg = document.getElementById("iLike-img");
+          // newImg.src = result.tbUrl;
 
           imgContainer.appendChild(title);
-          imgContainer.appendChild(newImg);
+          // imgContainer.appendChild(newImg);
+
+	      for(var i = 0; i < 6;i++) {
+	          var results = searcher.results[i];
+	          var result = results;
+	          var img2 =  document.createElement("img");
+	          img2.id = "iLike-" + i;
+	          img2.src = result.tbUrl;
+
+	          imgContainer.appendChild(img2);
+	      }
 
           contentDiv.appendChild(imgContainer);
 
@@ -86,15 +105,15 @@ class Front_Page_Result extends Front_Page {
 	    function OnLoad() {
 	      var imageSearch = new google.search.ImageSearch();
 
-	      imageSearch.setRestriction(google.search.ImageSearch.RESTRICT_IMAGESIZE,
-	                                 google.search.ImageSearch.IMAGESIZE_LARGE);
+	     // imageSearch.setRestriction(google.search.ImageSearch.RESTRICT_IMAGESIZE,
+	     //                          google.search.ImageSearch.IMAGESIZE_LARGE);
 
 	      imageSearch.setSearchCompleteCallback(this, searchCompleteiLike, [imageSearch]);
 	      imageSearch.execute("'.$iWant.'");
 
 	      var imageSearchLike = new google.search.ImageSearch();
-		  imageSearchLike.setRestriction(google.search.ImageSearch.RESTRICT_IMAGESIZE,
-	                                 google.search.ImageSearch.IMAGESIZE_LARGE);
+		  // imageSearchLike.setRestriction(google.search.ImageSearch.RESTRICT_IMAGESIZE,
+	      // google.search.ImageSearch.IMAGESIZE_LARGE);
 
 	      imageSearchLike.setSearchCompleteCallback(this, searchCompleteiWant, [imageSearchLike]);
 	      imageSearchLike.execute("'.$iLike.'");
