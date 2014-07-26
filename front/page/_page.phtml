@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" class="<?php print $class; ?>">
+	
+<head>
+	<title><?php print $title; ?></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<?php if(isset($meta) && is_array($meta)): ?>
+    <?php foreach($meta as $name => $content): ?>
+    <meta name="<?php print $name; ?>" content="<?php print $content; ?>" />
+    <?php endforeach; ?>
+    <?php endif; ?>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<!-- Main Page style -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/front/style.css" />
+</head>
+
+<body>
+	<div class="page">
+		<div class="head"><?php echo $head; ?></div>
+		<div class="body"><?php echo $body; ?></div>
+		<div class="foot"><?php echo $foot; ?></div>
+		<script type="text/javascript" src="/assets/front/script.js"></script>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
