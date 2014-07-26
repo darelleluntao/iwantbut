@@ -30,7 +30,7 @@ class Front_Page_Result extends Front_Page {
 
 	// return the values to the output page
 	$this->_body = array(
-            // 'javascriptiWant' => $this->_parseImage($iWant, $iLike)
+            'javascriptiWant' => $this->_parseImage($iWant, $iLike)
      );
 		return $this->_page();
 	}
