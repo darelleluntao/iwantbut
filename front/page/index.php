@@ -14,10 +14,10 @@ class Front_Page_Index extends Front_Page {
 	-------------------------------*/
 	/* Protected Properties
 	-------------------------------*/
-	protected $_title = 'Eden';
+	protected $_title = 'iWantBut';
 	protected $_class = 'home';
 	protected $_template = '/index.phtml';
-	
+
 	/* Private Properties
 	-------------------------------*/
 	/* Magic
@@ -25,10 +25,10 @@ class Front_Page_Index extends Front_Page {
 	/* Public Methods
 	-------------------------------*/
 	public function render() {
-		
+
 		return $this->_page();
 	}
-	
+
 	/* Protected Methods
 	-------------------------------*/
 	/* Private Methods
