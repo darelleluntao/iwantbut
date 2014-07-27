@@ -28,6 +28,10 @@ class Front_Page_Result extends Front_Page {
 	$iLike = $_POST['iLike'];
 	$iWant = $_POST['iWant'];
 
+	if (!isset($_POST['iLike']) || !isset($_POST['iWant'])) {
+		header('location: /');
+	}
+
 	// return the values to the output page
 	$this->_body = array(
             'javascriptiWant' => $this->_parseImage($iWant, $iLike)
