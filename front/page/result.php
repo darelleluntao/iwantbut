@@ -110,14 +110,14 @@ class Front_Page_Result extends Front_Page {
 	     // imageSearch.setRestriction(google.search.ImageSearch.RESTRICT_IMAGESIZE,
 	     //                          google.search.ImageSearch.IMAGESIZE_LARGE);
 
-	      imageSearch.setSearchCompleteCallback(this, searchCompleteiLike, [imageSearch]);
+	      imageSearch.setSearchCompleteCallback(this, searchCompleteiWant, [imageSearch]);
 	      imageSearch.execute("'.$iWant.'");
 
 	      var imageSearchLike = new google.search.ImageSearch();
 		  // imageSearchLike.setRestriction(google.search.ImageSearch.RESTRICT_IMAGESIZE,
 	      // google.search.ImageSearch.IMAGESIZE_LARGE);
 
-	      imageSearchLike.setSearchCompleteCallback(this, searchCompleteiWant, [imageSearchLike]);
+	      imageSearchLike.setSearchCompleteCallback(this, searchCompleteiLike, [imageSearchLike]);
 	      imageSearchLike.execute("'.$iLike.'");
 
 	    }
