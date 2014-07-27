@@ -28,6 +28,10 @@ class Front_Page_Result extends Front_Page {
 	$iLike = $_POST['iLike'];
 	$iWant = $_POST['iWant'];
 
+	if (!isset($_POST['iLike']) || !isset($_POST['iWant'])) {
+		header('location: /');
+	}
+
 	// return the values to the output page
 	$this->_body = array(
             'javascriptiWant' => $this->_parseImage($iWant, $iLike)
@@ -42,13 +46,13 @@ class Front_Page_Result extends Front_Page {
       function searchCompleteiWant(searcher) {
         if (searcher.results && searcher.results.length > 0) {
 
-          var contentDiv = document.getElementById("iWant");
+          var contentDiv = document.getElementById("iWant-img");
           var results = searcher.results[0];
           var result = results;
-          var imgContainer = document.getElementById("content");
+          var imgContainer = document.getElementById("iWant");
 
           var title =  document.getElementById("iWant-h2");
-          title.innerHTML = result.titleNoFormatting;
+          // title.innerHTML = result.titleNoFormatting;
 
           // var newImg = document.getElementById("iWant-img");
           // newImg.src = result.tbUrl;
@@ -60,9 +64,10 @@ class Front_Page_Result extends Front_Page {
 	          var result = results;
 		          var img2 =  document.createElement("img");
 		          img2.id = "iWant-" + i;
-	          img2.src = result.tbUrl;
-
-		          imgContainer.appendChild(img2);
+			      img2.src = result.tbUrl;
+	              var imgSlides = document.createElement("div");
+	              imgSlides.appendChild(img2);
+		          imgContainer.appendChild(imgSlides);
 	        }
 
           contentDiv.appendChild(imgContainer);
@@ -73,13 +78,13 @@ class Front_Page_Result extends Front_Page {
       function searchCompleteiLike(searcher) {
         if (searcher.results && searcher.results.length > 0) {
 
-          var contentDiv = document.getElementById("iLike");
+          var contentDiv = document.getElementById("iLike-img");
           var results = searcher.results[0];
           var result = results;
-          var imgContainer = document.getElementById("content");
+          var imgContainer = document.getElementById("iLike");
 
 	      var title =  document.getElementById("iLike-h2");
-          title.innerHTML = result.titleNoFormatting;
+          // title.innerHTML = result.titleNoFormatting;
 
           // var newImg = document.getElementById("iLike-img");
           // newImg.src = result.tbUrl;
@@ -93,11 +98,12 @@ class Front_Page_Result extends Front_Page {
 	          var img2 =  document.createElement("img");
 	          img2.id = "iLike-" + i;
 	          img2.src = result.tbUrl;
-
-	          imgContainer.appendChild(img2);
+			  var imgSlides = document.createElement("div");
+              imgSlides.appendChild(img2);
+	          imgContainer.appendChild(imgSlides);
 	      }
 
-          contentDiv.appendChild(imgContainer);
+          content.appendChild(imgContainer);
 
         }
       }
@@ -108,14 +114,14 @@ class Front_Page_Result extends Front_Page {
 	     // imageSearch.setRestriction(google.search.ImageSearch.RESTRICT_IMAGESIZE,
 	     //                          google.search.ImageSearch.IMAGESIZE_LARGE);
 
-	      imageSearch.setSearchCompleteCallback(this, searchCompleteiLike, [imageSearch]);
+	      imageSearch.setSearchCompleteCallback(this, searchCompleteiWant, [imageSearch]);
 	      imageSearch.execute("'.$iWant.'");
 
 	      var imageSearchLike = new google.search.ImageSearch();
 		  // imageSearchLike.setRestriction(google.search.ImageSearch.RESTRICT_IMAGESIZE,
 	      // google.search.ImageSearch.IMAGESIZE_LARGE);
 
-	      imageSearchLike.setSearchCompleteCallback(this, searchCompleteiWant, [imageSearchLike]);
+	      imageSearchLike.setSearchCompleteCallback(this, searchCompleteiLike, [imageSearchLike]);
 	      imageSearchLike.execute("'.$iLike.'");
 
 	    }
