@@ -1,15 +1,46 @@
-<div id="content">
-    <div id="iWant">
-        <h2 id="iWant-h2"></h2>
-        <img id="iWant-img"/>
-    </div>
-    <div id="iLike">
-        <h2 id="iLike-h2"></h2>
-        <img id="iLike-img"/>
-    </div>
+<div class="container">
+	<div id="splitlayout" class="splitlayout">
+		<div class="intro">
+			<div class="side side-left">
+				<header class="codropsheader clearfix">
+					 iWantBut
+				</header>
+				<div class="intro-content">
+					<div id="iWant">
+				        <h2 id="iWant-h2"></h2>
+				        <img id="iWant-img"/>
+				    </div>
+				</div>
+				<div class="overlay"></div>
+			</div>
+			<div class="side side-right">
+				<div class="intro-content">
+				    <div id="iLike">
+				        <h2 id="iLike-h2"></h2>
+				        <img id="iLike-img"/>
+				    </div>
+				</div>
+				<div class="overlay"></div>
+			</div>
+		</div><!-- /intro -->
+		<div class="page page-right">
+			<div class="page-inner">
+				
+				<!-- description goes here -->
 
-<script src="//www.google.com/jsapi?key=AIzaSyA5m1Nc8ws2BbmPRwKu5gFradvD_hgq6G0" type="text/javascript"></script>
+			</div><!-- /page-inner -->
+		</div><!-- /page-right -->
+		<div class="page page-left">
+			<div class="page-inner">
 
-<script type="text/javascript"><?php echo $javascriptiWant; ?></script>
+				<!-- description goes here -->
 
-</div>
+			</div><!-- /page-inner -->
+		</div><!-- /page-left -->
+		<a href="#" class="back back-right" title="back to intro">&rarr;</a>
+		<a href="#" class="back back-left" title="back to intro">&larr;</a>
+	</div><!-- /splitlayout -->
+	<!-- getting results -->
+	<script src="//www.google.com/jsapi?key=AIzaSyA5m1Nc8ws2BbmPRwKu5gFradvD_hgq6G0" type="text/javascript"></script>
+	<script type="text/javascript"><?php echo $javascriptiWant; ?></script>
+</div><!-- /container
