@@ -1,25 +1,21 @@
-<body>
-<div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-lg-12"><img src="assets/front/public/images/iwantbut-logo.jpg" alt="..." class="img-circle"></div>
-    </div>
-    <form class="form-horizontal" role="form" method="POST" action="/result">
-      <div class="form-group">
-        <div class="col-lg-12">
-            <input type="text" name="iWant" class="input-text-home form-control" placeholder="I WANT A ..." required/>
-        </div>
+<body class="nl-blurred">
+    <div class="container demo-1">
+      <!-- Top Navigation -->
+      <header>
+        <h1>iWantBut.com<span></span></h1>
+        <h2>Having trouble choosing what to buy? compare it now<span></span></h2>
+      </header>
+      <div class="main clearfix">
+        <form id="nl-form" class="nl-form" method="POST" action="/result">
+          I want to buy
+           <input type="text" name="iWant" class="" placeholder="..." required/><br />  but
+          I also<br /> like
+          <input type="text" class=""  name="iLike" placeholder="..." required/>
+          <div class="nl-submit-wrap">
+            <button class="nl-submit" type="submit">Compare my desires</button>
+          </div>
+          <div class="nl-overlay"></div>
+        </form>
       </div>
-        <div class="form-group">
-        <div class="col-lg-12">
-            <input type="text" name="iLike" class="input-text-home form-control" placeholder="BUT I LIKE ..." required/>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-lg-12">
-            <input type="submit" name="submit" class="form-control" />
-        </div>
-      </div>
-    </form>
-</div>
-</body>
-</html>
+    </div><!-- /container -->
+  </body>

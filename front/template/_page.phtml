@@ -12,20 +12,30 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
+    <style type="text/css">
+    </style>
+
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="assets/front/public/stylesheet/bootstrap.min.css">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="assets/front/public/stylesheet/bootstrap-theme.min.css">
 	<!-- Main Page style -->
     <link rel="stylesheet" type="text/css" media="screen" href="/assets/front/public/stylesheet/style.css" />
+
+    <link rel="stylesheet" type="text/css" href="assets/front/public/stylesheet/default.css" />
+    <link rel="stylesheet" type="text/css" href="assets/front/public/stylesheet/component.css" />
 </head>
 
 <body>
 	<div class="page">
 		<div class="head"><?php echo $head; ?></div>
 		<div class="body"><?php echo $body; ?></div>
-		<div class="foot"><?php echo $foot; ?></div>
+		<!-- <div class="foot"><?php echo $foot; ?></div> -->
 		<script type="text/javascript" src="/assets/front/public/scripts/script.js"></script>
+        <script src="/assets/front/public/platform/platform.js"></script>
+
+        <link href="/assets/front/public/font-roboto/roboto.html" rel="import">
+        <link href="/assets/front/public/paper-input.html" rel="import">
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -22,7 +22,7 @@ table {  border-collapse: collapse;  border-spacing: 0;}
 
 body { background-color: #DADADA; color:; }
 .container{ width: 980px; margin: 0 auto; }
-.input-text-home { padding: 25px 20px; font-size: 20px; font-family: arial,sans-serif; }
+.input-text-home { padding: 40px 20px; font-size: 25px; font-family: arial,sans-serif; margin:5px;}
 .foot {
 position: fixed;
 bottom: 0;
@@ -31,4 +31,11 @@ background: #333;
 height: 39px;
 }
 
+.taglines {font-size: 35px; font-family: arial, sans-serif; line-height: 40px; padding: 5px; margin:75px auto 75px auto; text-align: center;}
+.submit {
+width: 100px;
+height: 100px;
+border-radius: 150px;
+margin:25px;
+}
 /** Global Script END **/
